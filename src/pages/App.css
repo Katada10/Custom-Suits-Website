@@ -26,7 +26,9 @@
 html, body{
   height: 100vh;
   overflow-y: auto;
-  
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+  flex-direction: row;
 }
 .appBody{
   background-color: #282c34;
@@ -34,6 +36,12 @@ html, body{
   
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.my-img{
+width: 50%;
+object-fit: cover;
+}
+
 
 .App-link {
   color: #61dafb;

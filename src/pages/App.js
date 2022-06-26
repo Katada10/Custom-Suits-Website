@@ -1,7 +1,7 @@
 
 
 import Button from 'react-bootstrap/Button';
-
+import { Switch, Route, Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 
 
@@ -27,7 +27,7 @@ function App() {
 
 
           <a href='#home' >
-            <Button variant="danger" size="lg">Start Measurement</Button>{' '}
+            <Button as={Link} to="/measure" variant="danger" size="lg">Start Measurement</Button>{' '}
           </a>
         </Container>
       </body>
