@@ -42,6 +42,14 @@ width: 50%;
 object-fit: cover;
 }
 
+Card{
+
+ color: red;
+}
+
+.txt:hover{
+text-decoration: underline;
+}
 
 .App-link {
   color: #61dafb;
