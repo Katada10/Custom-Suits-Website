@@ -10,9 +10,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Shop from "./pages/shop";
 import Measure from "./pages/measure";
 import ItemView from "./pages/itemview";
-import Cart from "./pages/cart";
 
 import Navigation from './navigation';
+import ViewShop from './pages/viewshop';
+
+import ShopAR from './pages/shopar';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -27,8 +29,9 @@ root.render(
       <Route path="/" element={<App />} />
       <Route path="/measure" element={<Measure />} />
       <Route path="/shop" element={<Shop />} />
+      <Route path="/shopar" element={<ShopAR />} />
+      <Route path="/viewshop" element={<ViewShop />} />
       <Route path="/itemview" element={<ItemView />} />
-      <Route path="/cart" element={<Cart />} />
     </Routes>
 </Router>
 

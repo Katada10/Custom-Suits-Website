@@ -19,7 +19,7 @@ import ProductList from './ProductList';
 
 
 
-function Shop() {
+function ShopAR() {
 
 const navigate = useNavigate();
 
@@ -36,7 +36,7 @@ const navigate = useNavigate();
               <Button className="pt-3 btn-danger" onClick=
               {(id) => navigate({pathname:"/viewshop", search:createSearchParams({cat:'jackets'}).toString()})}> 
               
-              Jackets </Button>
+              جاكيتات </Button>
        </Row>  
 
        <Row className='pt-5'>
@@ -44,7 +44,7 @@ const navigate = useNavigate();
           <Button className="pt-3 btn-danger" onClick=
           {(id) => navigate({pathname:"/viewshop", search:createSearchParams({cat:'shirts'}).toString()})}> 
           
-          Shirts </Button>
+          قمصان </Button>
    </Row>  
 
    <Row className='pt-5'>
@@ -52,7 +52,7 @@ const navigate = useNavigate();
               <Button className="pt-3 btn-danger" onClick=
               {(id) => navigate({pathname:"/viewshop", search:createSearchParams({cat:'pants'}).toString()})}> 
               
-              Pants </Button>
+              سراويل  </Button>
        </Row>  
           </Container>
       </body>
@@ -60,4 +60,4 @@ const navigate = useNavigate();
   );
 }
 
-export default Shop;
+export default ShopAR;

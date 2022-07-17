@@ -6,12 +6,38 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route, Link, useLocation } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
+import Commerce from '@chec/commerce.js';
+
+
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref, set } from "firebase/database";
+
+
+const commerce = new Commerce('pk_test_45152cef84220ec9b84d4eccd8804f0375cc498ed6caa');
+
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDPdwzK5gm4EmG5aw0RGI9m_FqpjuojLrI",
+    authDomain: "project-3708089372598606655.firebaseapp.com",
+    projectId: "project-3708089372598606655",
+    storageBucket: "project-3708089372598606655.appspot.com",
+    messagingSenderId: "1040457624741",
+    appId: "1:1040457624741:web:068a8f972ebe1f7db3714c"
+  };
+
+  const fbApp = initializeApp(firebaseConfig);
+
+const db = getDatabase(fbApp);
+
 
 function ItemView() {
+
+  const location = useLocation();
+
   return (
     <div className="App">
 
@@ -25,17 +51,17 @@ function ItemView() {
 
 
             <Col>
-              <Image fluid className=" my-img" src="https://images.unsplash.com/photo-1585846416120-3a7354ed7d39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bGF3ZXJ8ZW58MHx8MHx8&w=1000&q=80"></Image>
+              <Image fluid className=" my-img" src={location.state.img}></Image>
             </Col>
 
 
 
             <Col className="px-5">
 
-              <h2> ITEM TITLE</h2> <br/>
+              <h2>{location.state.title}</h2> <br/>
 
               <h3>
-                300 CAD
+                {location.state.cost}
                 </h3>
               <br/>
                 <h4>
@@ -43,13 +69,13 @@ function ItemView() {
                 </h4>
                 <br />
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                  Sed fringilla risus quis condimentum bibendum. 
-                  Nullam mollis mauris a erat porttitor, sed ullamcorper libero suscipit.
+                <p> Made of the highest quality materials, you are sure to remain comfortable and
+                  stylish!
                   </p>
                   <br/>
-                  <Button as={Link} to="/cart" className="col-sm-10 col-lg-10 col-md-10" variant="danger" type="submit">
-                  Add to cart
+                  <Button as={Link} to="/shop" onClick={() => alert("Added to cart")}
+                   className="col-sm-10 col-lg-10 col-md-10" variant="danger" type="submit">
+                    Add to cart
                 </Button>
             </Col>
           </Row>
